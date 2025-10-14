@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攝影作品展示</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">攝影作品</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#intro">介紹</a></li>
+                <li><a href="#projects">作品</a></li>
+                <li><a href="#contact">聯絡</a></li> </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+    </header>
+
+    <main>
+        <section id="intro" class="section">
+            <div class="container intro-container">
+                <img src="https://files.catbox.moe/zvedba.jpg" alt="攝影師頭像" class="avatar">
+                <div class="intro-text">
+                    <h2>關於我</h2>
+                    <p>我是一位攝影愛好者，著迷於捕捉城市中的小驚喜與美好之處。
+                        我相信每一張照片背後，都藏著一個值得被細細品味的情感瞬間。
+                        我使用的相機是 canon eos r ，
+                        擁有的鏡頭是 RF 24-70mm F/2.8、RF 70-200mm F/2.8、RF 85mm F/1.2 ，
+                        這些是我記錄生活小趣味的夥伴。</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tf_luke723/" target="_blank">Instagram</a>
+                        <a href="https://line.me/ti/p/fMkfaAvBh2" target="_blank">line</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section alt">
+            <div class="container">
+                <h2>攝影作品</h2>
+
+                <div id="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="street">街景</button>
+                    <button class="filter-btn" data-filter="bopiliao">老街</button>
+                    <button class="filter-btn" data-filter="temple">寺廟</button>
+                    <button class="filter-btn" data-filter="people">人物</button>
+                    <button class="filter-btn" data-filter="nature">大自然</button>
+                </div>
+
+                <div class="grid">
+                    <div class="card" data-category="street"><img src="https://files.catbox.moe/9b61mo.JPG" alt="日落時等公車的人們" class="gallery-item"><h3>日落時等公車的人們</h3></div>
+                    <div class="card" data-category="street"><img src="https://files.catbox.moe/9umpa8.JPG" alt="在一棟廣告大樓下的車流" class="gallery-item"><h3>在一棟廣告大樓下的車流</h3></div>
+                    <div class="card" data-category="nature"><img src="https://files.catbox.moe/o8wu3f.jpg" alt="路邊樹葉的倒影" class="gallery-item"><h3>路邊樹葉的倒影</h3></div>
+                    <div class="card" data-category="bopiliao"><img src="https://files.catbox.moe/zrhpf4.JPG" alt="剝皮寮房子" class="gallery-item"><h3>剝皮寮房子</h3></div>
+                    <div class="card" data-category="bopiliao"><img src="https://files.catbox.moe/qbwmoy.JPG" alt="剝皮寮老街內部走道" class="gallery-item"><h3>剝皮寮老街內部走道</h3></div>
+                    <div class="card" data-category="bopiliao"><img src="https://files.catbox.moe/uyuq5v.JPG" alt="剝皮寮老街內部走道" class="gallery-item"><h3>剝皮寮老街內部走道</h3></div>
+                    <div class="card" data-category="people"><img src="https://files.catbox.moe/9c2w1x.JPG" alt="正在剝皮寮散步的阿公" class="gallery-item"><h3>正在剝皮寮散步的阿公</h3></div>
+                    <div class="card" data-category="bopiliao"><img src="https://files.catbox.moe/1yezat.JPG" alt="剝皮寮老街" class="gallery-item"><h3>剝皮寮老街</h3></div>
+                    <div class="card" data-category="bopiliao"><img src="https://files.catbox.moe/6sk4yx.JPG" alt="剝皮寮老街" class="gallery-item"><h3>剝皮寮老街</h3></div>
+                    <div class="card" data-category="art"><img src="https://files.catbox.moe/om008y.JPG" alt="手繪面具" class="gallery-item"><h3>手繪面具</h3></div>
+                    <div class="card" data-category="street"><img src="https://files.catbox.moe/ootfz7.JPG" alt="小巷子" class="gallery-item"><h3>小巷子</h3></div>
+                    <div class="card" data-category="street"><img src="https://files.catbox.moe/no4jiy.JPG" alt="小巷子" class="gallery-item"><h3>小巷子</h3></div>
+                    <div class="card" data-category="street"><img src="https://files.catbox.moe/zgfwv2.JPG" alt="圓山飯店前的車流" class="gallery-item"><h3>圓山飯店前的車流</h3></div>
+                    <div class="card" data-category="people"><img src="https://files.catbox.moe/v74ty2.jpg" alt="正在操作縫紉機的人" class="gallery-item"><h3>正在操作縫紉機的人</h3></div>
+                    <div class="card" data-category="people"><img src="https://files.catbox.moe/xiql33.JPG" alt="正在收垃圾的老奶奶" class="gallery-item"><h3>正在收垃圾的老奶奶</h3></div>
+                    <div class="card" data-category="nature"><img src="https://files.catbox.moe/wzgai8.JPG" alt="廢墟中的綠植" class="gallery-item"><h3>廢墟中的綠植</h3></div>
+                    <div class="card" data-category="nature"><img src="https://files.catbox.moe/2cbu03.jpg" alt="一條水溝" class="gallery-item"><h3>一條水溝</h3></div>
+                    <div class="card" data-category="temple"><img src="https://files.catbox.moe/p7q963.JPG" alt="龍山寺燈籠" class="gallery-item"><h3>龍山寺燈籠</h3></div>
+                    <div class="card" data-category="temple"><img src="https://files.catbox.moe/a1a8j1.JPG" alt="龍山寺" class="gallery-item"><h3>龍山寺</h3></div>
+                </div>
+
+                <button id="show-more" class="more-btn">查看更多作品</button>
+            </div>
+        </section>
+        
+        <section id="contact" class="section alt">
+            <div class="container">
+                <h2>聯絡我</h2>
+                <form action="https://formsubmit.co/lukeyan1000723@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="來自網站的聯絡訊息">
+                    <input type="hidden" name="_replyto" value="email">
+                    <input type="hidden" name="_next" value="https://formsubmit.co/thanks"> 
+                    
+                    <input type="text" name="name" placeholder="您的名字" required>
+                    <input type="email" name="email" placeholder="您的 Email" required>
+                    <input type="text" name="subject" placeholder="郵件主旨" required>
+                    <textarea name="message" placeholder="您的訊息內容" required></textarea>
+                    <button type="submit">送出訊息</button>
+                </form>
+            </div>
+        </section>
+        </main>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <span class="prev-btn">&lt;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <span class="next-btn">&gt;</span>
+    </div>
+
+    <footer>
+        <p>© 2025 LuxSite | Designed with precision & passion</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
