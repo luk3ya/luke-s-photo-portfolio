@@ -15,7 +15,8 @@
             <ul class="nav-links">
                 <li><a href="#intro">介紹</a></li>
                 <li><a href="#projects">作品</a></li>
-                <li><a href="#contact">聯絡</a></li> </ul>
+                <li><a href="#contact">聯絡</a></li>
+            </ul>
         </nav>
         <button id="theme-toggle" class="theme-btn">🌙</button>
     </header>
@@ -42,16 +43,7 @@
         <section id="projects" class="section alt">
             <div class="container">
                 <h2>攝影作品</h2>
-
-                <div id="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">全部</button>
-                    <button class="filter-btn" data-filter="street">街景</button>
-                    <button class="filter-btn" data-filter="bopiliao">老街</button>
-                    <button class="filter-btn" data-filter="temple">寺廟</button>
-                    <button class="filter-btn" data-filter="people">人物</button>
-                    <button class="filter-btn" data-filter="nature">大自然</button>
-                </div>
-
+                
                 <div class="grid">
                     <div class="card" data-category="street"><img src="https://files.catbox.moe/9b61mo.JPG" alt="日落時等公車的人們" class="gallery-item"><h3>日落時等公車的人們</h3></div>
                     <div class="card" data-category="street"><img src="https://files.catbox.moe/9umpa8.JPG" alt="在一棟廣告大樓下的車流" class="gallery-item"><h3>在一棟廣告大樓下的車流</h3></div>
@@ -74,27 +66,25 @@
                     <div class="card" data-category="temple"><img src="https://files.catbox.moe/a1a8j1.JPG" alt="龍山寺" class="gallery-item"><h3>龍山寺</h3></div>
                 </div>
 
-                <button id="show-more" class="more-btn">查看更多作品</button>
-            </div>
+                </div>
         </section>
-        
+
         <section id="contact" class="section alt">
             <div class="container">
                 <h2>聯絡我</h2>
                 <form action="https://formsubmit.co/lukeyan1000723@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="來自網站的聯絡訊息">
-                    <input type="hidden" name="_replyto" value="email">
                     <input type="hidden" name="_next" value="https://formsubmit.co/thanks"> 
                     
                     <input type="text" name="name" placeholder="您的名字" required>
                     <input type="email" name="email" placeholder="您的 Email" required>
-                    <input type="text" name="subject" placeholder="郵件主旨" required>
+                    <input type="text" name="subject" placeholder="郵件主旨 (選填)"> 
                     <textarea name="message" placeholder="您的訊息內容" required></textarea>
                     <button type="submit">送出訊息</button>
                 </form>
             </div>
         </section>
-        </main>
+    </main>
 
     <div id="lightbox" class="lightbox">
         <span class="close-btn">&times;</span>
