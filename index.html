@@ -10,9 +10,6 @@
 </head>
 
 <body>
-    <div id="status-message" class="status-message hidden">
-        感謝您的留言！我會盡快回覆您。
-    </div>
     
     <header class="navbar">
         <div class="logo">攝影作品</div>
@@ -91,8 +88,10 @@
         <section id="contact" class="section alt">
             <div class="container">
                 <h2>聯絡我</h2>
-                <form id="contact-form" action="https://formsubmit.co/lukeyan1000723@gmail.com" method="POST">
+                <form action="https://formsubmit.co/lukeyan1000723@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="來自作品集的聯絡訊息">
+                    <input type="hidden" name="_next" value="https://formsubmit.co/thanks"> 
+                    
                     <input type="text" name="name" placeholder="您的名字" required>
                     <input type="email" name="email" placeholder="您的 Email" required>
                     <textarea name="message" placeholder="您的訊息內容" required></textarea>
