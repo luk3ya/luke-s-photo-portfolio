@@ -6,18 +6,18 @@ const themeKey = 'photosite-theme';
 const filterButtons = document.querySelectorAll(".filter-btn");
 const allCards = document.querySelectorAll(".card");
 const showMoreBtn = document.getElementById("show-more");
-const galleryItems = document.querySelectorAll(".gallery-item"); // 燈箱用
+const galleryItems = document.querySelectorAll(".gallery-item"); 
 
-const initialCount = 3; // 初始顯示的卡片數量
-let isAllExpanded = false; // 追蹤 'all' 模式下是否已展開
-let currentFilter = 'all'; // 追蹤當前的篩選條件
+const initialCount = 3; // 初始顯示照片的數量
+let isAllExpanded = false; // 追蹤在 'all' 模式下是否已展開
+let currentFilter = 'all'; // 追蹤目前的篩選條件
 
 // === 主題切換 (無變動) ===
 const loadTheme = () => {
     const savedTheme = localStorage.getItem(themeKey);
     if (savedTheme === 'light-mode') {
         body.classList.add('light-mode');
-        // 檢查 toggle 元素是否存在
+        // 檢查 toggle 是否存在
         if (toggle) toggle.textContent = "☀️";
     } else {
         body.classList.remove('light-mode');
@@ -37,18 +37,8 @@ if (toggle) {
 }
 
 
-// === 聯絡表單 (本地處理) === 
-const contactForm = document.getElementById("contact-form");
-if (contactForm) {
-    contactForm.addEventListener("submit", (e) => { 
-        e.preventDefault(); // <--- 移除這個阻止預設行為的程式碼
-        alert("感謝你的留言！我會盡快回覆你。"); 
-        contactForm.reset(); 
-    });
-}
 
-
-// === 燈箱 (Lightbox) 功能 === 
+// === 燈箱 (Lightbox) 功能 ===
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 let currentIndex;
@@ -56,7 +46,7 @@ let visibleItems = [];
 
 const updateVisibleItems = () => {
     visibleItems = Array.from(galleryItems).filter(item => {
-        // 檢查父元素 .card 的 display 屬性
+        // 檢查父元素 .card 的 display 
         const card = item.closest('.card');
         return card && window.getComputedStyle(card).display !== 'none';
     });
@@ -112,7 +102,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 
-// === 作品分類與查看更多邏輯 === 
+// === 作品分類與查看更多邏輯=== 
 const applyFilter = (filter, expanded) => {
     currentFilter = filter;
     let cardIndexInFilter = 0;
@@ -126,14 +116,14 @@ const applyFilter = (filter, expanded) => {
             cardIndexInFilter++;
 
             if (filter === 'all') {
-                // '全部' 篩選邏輯：嚴格遵循展開狀態和初始數量
+                // '全部' 篩選邏輯：遵循展開狀態和初始數量
                 if (expanded || cardIndexInFilter <= initialCount) {
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
                 }
             } else {
-                // 特定分類篩選邏輯：直接顯示所有匹配的
+                // 特定分類篩選邏輯
                 card.style.display = 'block';
             }
         } else {
@@ -142,7 +132,7 @@ const applyFilter = (filter, expanded) => {
         }
     });
 
-    // 2. 調整「查看更多」按鈕的顯示狀態和文字
+    // 「查看更多」按鈕的顯示狀態和文字
     const totalMatchCount = cardIndexInFilter; 
     
     if (showMoreBtn) {
@@ -182,7 +172,7 @@ filterButtons.forEach(button => {
 });
 
 
-// 查看更多按鈕事件監聽器 (僅在 'all' 模式下有作用)
+// 查看更多按鈕事件監聽器 (只有在 'all' 模式下有作用)
 if (showMoreBtn) {
     showMoreBtn.addEventListener("click", () => {
         if (currentFilter === 'all') {

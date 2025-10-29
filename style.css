@@ -76,7 +76,7 @@ body {
     left: 0;
     bottom: 0px;
     width: 0;
-    height: 2px; /* 將底線加粗一點 */
+    height: 2px; /* 底線加粗 */
     background: var(--accent);
     transition: width 0.3s;
 }
@@ -130,7 +130,7 @@ h2::after {
     margin: 15px auto;
 }
 
-/* 關於我區塊強化 */
+/* （關於我）的區塊強化 */
 .intro-container {
     display: flex;
     align-items: center;
@@ -155,17 +155,30 @@ h2::after {
     margin-top: 20px;
 }
 
-.social-links a {
-    color: var(--text);
-    text-decoration: none;
-    margin-right: 20px;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s, color 0.3s;
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px; /* 增加圖標之間的間距 */
 }
 
-.social-links a:hover {
-    border-color: var(--accent);
+.intro-container .intro-text .social-links a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: none; 
+    transition: color 0.3s, transform 0.2s;
+    display: inline-block; /* 讓 transform 生效 */
+    
+    margin-right: 0; 
+}
+
+.intro-container .intro-text .social-links a:hover {
     color: var(--accent);
+    transform: scale(1.1); 
+}
+
+/* 確保圖標大小正確 */
+.social-links i {
+    font-size: 2em; 
 }
 
 /* RWD 響應式設計 */
@@ -232,7 +245,7 @@ h2::after {
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 5px 15px var(--shadow);
-    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s, display 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
 }
 
 .card h3 {
@@ -260,7 +273,7 @@ h2::after {
 .more-btn {
     margin-top: 40px;
     background: none;
-    border: 2px solid var(--accent); /* 加粗邊框 */
+    border: 2px solid var(--accent); /* 邊框加粗 */
     color: var(--accent);
     font-size: 1.1em;
     padding: 12px 35px;
@@ -274,21 +287,6 @@ h2::after {
     color: #fff;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 179, 255, 0.4);
-}
-
-/* 隱藏區塊動畫 */
-.hidden {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    padding: 0 !important;
-    transition: all 0.6s ease;
-}
-
-.show {
-    max-height: 5000px; /* 確保內容能完整顯示 */
-    opacity: 1;
-    padding: 100px 20px;
 }
 
 /* 表單 */
@@ -392,7 +390,7 @@ form button:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 4em; /* 放大導航按鈕 */
+    font-size: 4em;
     color: #fff;
     cursor: pointer;
     padding: 0 20px;
@@ -425,4 +423,5 @@ footer {
     background: #eee;
     color: #555;
 }
+
 /* CSS 樣式結束 */
